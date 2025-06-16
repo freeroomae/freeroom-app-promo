@@ -62,8 +62,14 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-32 bg-pure-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} className="py-32 bg-pure-white relative overflow-hidden">
+      {/* 3D Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-system-blue/5 to-electric-blue/5 rounded-3xl animate-float transform rotate-12" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-br from-electric-blue/5 to-system-blue/5 rounded-2xl animate-float transform -rotate-12" style={{ animationDelay: '3s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="text-center mb-20 section-fade-in">
           <h2 className="text-display-md font-display font-black text-deep-black mb-6">
@@ -74,32 +80,33 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
+        {/* Features Grid with 3D Effects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="section-fade-in group hover-lift"
+              className="section-fade-in group hover-lift feature-card-3d"
               style={{ animationDelay: feature.delay }}
             >
-              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:border-system-blue/20">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-system-blue/10 to-electric-blue/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:border-system-blue/20 group-hover:transform group-hover:rotateY-2 group-hover:translateZ-4">
+                {/* 3D Icon Container */}
+                <div className="w-16 h-16 bg-gradient-to-br from-system-blue/10 to-electric-blue/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:rotateZ-6 transition-all duration-300 shadow-lg">
                   {feature.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-bold text-deep-black mb-4">
+                <h3 className="text-xl font-display font-bold text-deep-black mb-4 group-hover:text-system-blue transition-colors duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-silver leading-relaxed text-sm">
                   {feature.description}
                 </p>
 
-                {/* Hover Effect */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-system-blue font-semibold text-sm">
-                    Learn more →
+                {/* 3D Hover Effect */}
+                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <span className="text-system-blue font-semibold text-sm inline-flex items-center">
+                    Learn more 
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </span>
                 </div>
               </div>
@@ -107,24 +114,23 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        {/* Statistics Section */}
+        {/* 3D Statistics Section */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 section-fade-in" style={{ animationDelay: '1.2s' }}>
-          <div className="text-center">
-            <div className="text-4xl font-display font-black text-system-blue mb-2">99.97%</div>
-            <div className="text-silver font-medium">Uptime Rate</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-display font-black text-system-blue mb-2">90%</div>
-            <div className="text-silver font-medium">Reduction in Dues</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-display font-black text-system-blue mb-2">1000+</div>
-            <div className="text-silver font-medium">Properties Managed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-display font-black text-system-blue mb-2">24/7</div>
-            <div className="text-silver font-medium">Support Available</div>
-          </div>
+          {[
+            { value: "99.97%", label: "Uptime Rate" },
+            { value: "90%", label: "Reduction in Dues" },
+            { value: "1000+", label: "Properties Managed" },
+            { value: "24/7", label: "Support Available" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center group">
+              <div className="stat-card-3d transition-all duration-500 group-hover:transform group-hover:translateY-2 group-hover:scale-105">
+                <div className="text-4xl font-display font-black text-system-blue mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {stat.value}
+                </div>
+                <div className="text-silver font-medium">{stat.label}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

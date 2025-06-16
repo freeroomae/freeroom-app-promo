@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 const HeroSection = () => {
   const hero3DRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -23,10 +24,28 @@ const HeroSection = () => {
       `;
     };
 
-    const heroElement = hero3DRef.current?.parentElement;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const heroElement = sectionRef.current;
     if (heroElement) {
       heroElement.addEventListener('mousemove', handleMouseMove);
-      return () => heroElement.removeEventListener('mousemove', handleMouseMove);
+      
+      const elements = heroElement.querySelectorAll('.animate-on-scroll');
+      elements.forEach((el) => observer.observe(el));
+
+      return () => {
+        heroElement.removeEventListener('mousemove', handleMouseMove);
+        observer.disconnect();
+      };
     }
   }, []);
 
@@ -40,11 +59,16 @@ const HeroSection = () => {
   const gccCountries = ["Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "UAE"];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center premium-gradient overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center premium-gradient overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-system-blue/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-electric-blue/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* 3D Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-system-blue/20 to-electric-blue/20 rounded-xl animate-float backdrop-blur-sm border border-white/10" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-1/3 right-20 w-16 h-16 bg-gradient-to-br from-white/10 to-white/5 rounded-full animate-float backdrop-blur-sm border border-white/10" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/3 left-1/4 w-12 h-12 bg-gradient-to-br from-electric-blue/30 to-system-blue/30 rounded-lg animate-float backdrop-blur-sm border border-white/10" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -52,32 +76,32 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left">
             {/* GCC Launch Banner */}
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6 animate-fade-in-up">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6 animate-on-scroll hover-lift">
               <span className="text-2xl mr-2">🚀</span>
               <span className="text-white font-semibold">Now Launching in GCC</span>
             </div>
 
-            <h1 className="text-display-xl lg:text-display-xl font-display font-black text-white mb-6 animate-fade-in-up">
+            <h1 className="text-display-xl lg:text-display-xl font-display font-black text-white mb-6 animate-on-scroll">
               Complete Property
               <span className="text-gradient block">Management</span>
               Solution
             </h1>
             
-            <p className="text-xl lg:text-2xl text-white/80 mb-8 font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl lg:text-2xl text-white/80 mb-8 font-light leading-relaxed animate-on-scroll" style={{ animationDelay: '0.2s' }}>
               Streamline your property operations with FreeRoom's all-in-one platform. 
               Manage finances, tenants, facilities, and sales from a single dashboard.
             </p>
 
             {/* GCC Countries */}
-            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 animate-on-scroll" style={{ animationDelay: '0.3s' }}>
               {gccCountries.map((country, index) => (
-                <span key={index} className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                <span key={index} className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm hover-lift">
                   {country}
                 </span>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-on-scroll" style={{ animationDelay: '0.4s' }}>
               <button className="bg-system-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift animate-glow">
                 Start Free Trial
               </button>
@@ -87,13 +111,16 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Platform Preview Cards */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* 3D Platform Preview Cards */}
+          <div ref={hero3DRef} className="grid grid-cols-2 gap-4 transform-gpu">
             {platformCards.map((card, index) => (
               <div 
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover-lift animate-fade-in-up"
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover-lift animate-on-scroll card-3d"
+                style={{ 
+                  animationDelay: `${0.5 + index * 0.1}s`,
+                  transform: `translateZ(${(index % 2) * 20 + 10}px) rotateY(${(index % 2) * 5 - 2.5}deg)`
+                }}
               >
                 <h3 className="text-white font-bold text-lg mb-2">{card.title}</h3>
                 <p className="text-white/70 text-sm">{card.description}</p>

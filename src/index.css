@@ -132,7 +132,8 @@
   }
 
   .hover-lift:hover {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 
   .section-fade-in {
@@ -144,5 +145,56 @@
   .section-fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* 3D Effects */
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .feature-card-3d:hover {
+    transform: rotateY(2deg) translateZ(10px);
+  }
+
+  .stat-card-3d {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transform-gpu {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  /* 3D Rotation Classes */
+  .rotateY-2 {
+    transform: rotateY(2deg);
+  }
+
+  .rotateZ-6 {
+    transform: rotateZ(6deg);
+  }
+
+  .translateZ-4 {
+    transform: translateZ(4px);
+  }
+
+  /* Parallax Background Elements */
+  .parallax-bg {
+    transform: translateZ(-1px) scale(2);
   }
 }
