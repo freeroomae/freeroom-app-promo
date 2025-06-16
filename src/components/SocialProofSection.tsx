@@ -22,26 +22,25 @@ const SocialProofSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const stats = [
-    { number: "500K+", label: "Active Users" },
-    { number: "99.9%", label: "Uptime Guaranteed" },
-    { number: "150+", label: "Countries Served" },
-    { number: "4.9/5", label: "Customer Rating" }
-  ];
-
   const testimonials = [
     {
-      quote: "Nexus transformed our entire operation. What used to take weeks now happens in hours. The ROI was immediate and substantial.",
-      author: "Sarah Chen",
-      role: "CEO, TechCorp",
+      quote: "Our phones would never stop ringing before FreeRoom. 3 years of struggle, and finally we have time for family. The automated systems have been a game-changer for our operations.",
+      author: "XU Lifestyle",
+      role: "FreeRoom user since 2024",
       delay: "0s"
     },
     {
-      quote: "The most intuitive platform we've ever used. Our team adopted it instantly, and productivity increased by 300% in the first month.",
-      author: "Michael Rodriguez", 
-      role: "Operations Director, Global Solutions",
+      quote: "We were using too many apps to get things done... now we have just one. FreeRoom has consolidated everything we need into a single, powerful platform.",
+      author: "Hyphen", 
+      role: "FreeRoom user since 2023",
       delay: "0.2s"
     }
+  ];
+
+  const platformAvailability = [
+    { platform: "iOS", icon: "📱", description: "iPhone & iPad apps" },
+    { platform: "Android", icon: "🤖", description: "Mobile application" },
+    { platform: "Web", icon: "💻", description: "Browser-based platform" }
   ];
 
   return (
@@ -50,30 +49,15 @@ const SocialProofSection = () => {
         {/* Section Header */}
         <div className="text-center mb-20 section-fade-in">
           <h2 className="text-display-md font-display font-black text-white mb-6">
-            Trusted by <span className="text-gradient">Industry Leaders</span>
+            What Our <span className="text-gradient">Users Say</span>
           </h2>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className="text-center section-fade-in glass-effect rounded-2xl p-6 hover-lift"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-4xl lg:text-5xl font-display font-black text-white mb-2">
-                {stat.number}
-              </div>
-              <div className="text-white/70 font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+          <p className="text-xl text-white/80 mb-8">
+            Hear from property managers who've transformed their operations
+          </p>
         </div>
 
         {/* Testimonials */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
@@ -85,7 +69,7 @@ const SocialProofSection = () => {
               </div>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-system-blue to-electric-blue rounded-full flex items-center justify-center text-white font-bold mr-4">
-                  {testimonial.author.split(' ').map(n => n[0]).join('')}
+                  {testimonial.author.split(' ')[0][0]}
                 </div>
                 <div>
                   <div className="text-white font-semibold">
@@ -100,17 +84,33 @@ const SocialProofSection = () => {
           ))}
         </div>
 
-        {/* Client Logos */}
+        {/* Platform Availability */}
         <div className="section-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="text-center text-white/60 text-sm mb-8">
-            Trusted by leading companies worldwide
+          <div className="text-center text-white mb-8">
+            <h3 className="text-2xl font-display font-bold mb-4">Accessible On</h3>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {['TechCorp', 'GlobalSoft', 'Innovation Labs', 'Future Systems', 'Digital Plus'].map((company, index) => (
-              <div key={index} className="text-white/40 font-semibold text-lg hover:text-white/80 transition-colors duration-300">
-                {company}
+          <div className="grid md:grid-cols-3 gap-6">
+            {platformAvailability.map((platform, index) => (
+              <div key={index} className="text-center glass-effect rounded-2xl p-6 hover-lift">
+                <div className="text-4xl mb-3">{platform.icon}</div>
+                <div className="text-white font-bold text-lg mb-2">{platform.platform}</div>
+                <div className="text-white/70 text-sm">{platform.description}</div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Coming Soon Features */}
+        <div className="section-fade-in mt-20" style={{ animationDelay: '0.6s' }}>
+          <div className="text-center text-white mb-8">
+            <h3 className="text-2xl font-display font-bold mb-4">Coming Soon</h3>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              {['Amenities Booking', 'Visitor Management', 'Asset Management', 'Planned Preventative Maintenance', 'Channel Management', 'Lead Management'].map((feature, index) => (
+                <span key={index} className="bg-white/10 text-white/80 px-4 py-2 rounded-full">
+                  {feature}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

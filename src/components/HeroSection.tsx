@@ -30,6 +30,15 @@ const HeroSection = () => {
     }
   }, []);
 
+  const platformCards = [
+    { title: "Finance Management", description: "Automated billing & collections" },
+    { title: "Tenant Management", description: "Digital onboarding & renewals" },
+    { title: "Facility Management", description: "Maintenance & operations" },
+    { title: "Sales Management", description: "Bookings & inventory" }
+  ];
+
+  const gccCountries = ["Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "UAE"];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center premium-gradient overflow-hidden">
       {/* Animated Background Elements */}
@@ -42,53 +51,54 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
+            {/* GCC Launch Banner */}
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6 animate-fade-in-up">
+              <span className="text-2xl mr-2">🚀</span>
+              <span className="text-white font-semibold">Now Launching in GCC</span>
+            </div>
+
             <h1 className="text-display-xl lg:text-display-xl font-display font-black text-white mb-6 animate-fade-in-up">
-              The Future of
-              <span className="text-gradient block">Innovation</span>
-              is Here
+              Complete Property
+              <span className="text-gradient block">Management</span>
+              Solution
             </h1>
             
             <p className="text-xl lg:text-2xl text-white/80 mb-8 font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Revolutionary technology that transforms how you work. 
-              Experience the difference that premium quality makes.
+              Streamline your property operations with FreeRoom's all-in-one platform. 
+              Manage finances, tenants, facilities, and sales from a single dashboard.
             </p>
+
+            {/* GCC Countries */}
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              {gccCountries.map((country, index) => (
+                <span key={index} className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                  {country}
+                </span>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <button className="bg-system-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift animate-glow">
-                Discover Now
+                Start Free Trial
               </button>
               <button className="border border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift glass-effect">
                 Watch Demo
               </button>
             </div>
-
-            <p className="text-white/60 text-sm mt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              Trusted by 10,000+ industry leaders worldwide
-            </p>
           </div>
 
-          {/* 3D Element */}
-          <div className="flex justify-center lg:justify-end">
-            <div 
-              ref={hero3DRef}
-              className="relative w-80 h-80 lg:w-96 lg:h-96 animate-float"
-            >
-              {/* Main 3D Shape */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/20 shadow-2xl">
-                <div className="absolute inset-4 bg-gradient-to-br from-system-blue/30 to-electric-blue/30 rounded-2xl"></div>
-                <div className="absolute inset-8 bg-gradient-to-br from-white/10 to-transparent rounded-xl border border-white/10"></div>
-                
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-system-blue/50 rounded-full blur-sm animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-electric-blue/50 rounded-full blur-sm animate-pulse delay-500"></div>
-                
-                {/* Center Glow */}
-                <div className="absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full animate-glow"></div>
+          {/* Platform Preview Cards */}
+          <div className="grid grid-cols-2 gap-4">
+            {platformCards.map((card, index) => (
+              <div 
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover-lift animate-fade-in-up"
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+              >
+                <h3 className="text-white font-bold text-lg mb-2">{card.title}</h3>
+                <p className="text-white/70 text-sm">{card.description}</p>
               </div>
-              
-              {/* Shadow */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-64 h-8 bg-black/20 rounded-full blur-xl"></div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

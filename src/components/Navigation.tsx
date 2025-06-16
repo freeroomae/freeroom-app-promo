@@ -15,8 +15,8 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Products', href: '#products' },
-    { name: 'Solutions', href: '#solutions' },
+    { name: 'Features', href: '#features' },
+    { name: 'Pricing', href: '#pricing' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -34,7 +34,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <span className="text-2xl font-display font-bold text-white">
-              Nexus
+              FreeRoom
             </span>
           </div>
 
@@ -56,7 +56,7 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <button className="bg-system-blue hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover-lift">
-              Get Started
+              Start Free Trial
             </button>
           </div>
 
@@ -89,7 +89,7 @@ const Navigation = () => {
               </a>
             ))}
             <button className="w-full bg-system-blue hover:bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 mt-4">
-              Get Started
+              Start Free Trial
             </button>
           </div>
         </div>

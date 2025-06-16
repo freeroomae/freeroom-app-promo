@@ -22,17 +22,16 @@ const CTASection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const steps = [
-    { number: "1", title: "Sign Up", description: "Create your account in seconds" },
-    { number: "2", title: "Configure", description: "Customize to your needs" },
-    { number: "3", title: "Launch", description: "Start transforming your work" }
+  const benefits = [
+    { title: "Time Savings", description: "Automated processes reduce manual work" },
+    { title: "Money Savings", description: "90% reduction in rent dues" },
+    { title: "Quality Features", description: "99.97% uptime reliability" }
   ];
 
-  const trustIndicators = [
-    "30-day money-back guarantee",
-    "Cancel anytime", 
-    "Dedicated onboarding support",
-    "99.9% uptime SLA"
+  const platforms = [
+    { name: "iOS", icon: "📱" },
+    { name: "Android", icon: "🤖" },
+    { name: "Web", icon: "💻" }
   ];
 
   return (
@@ -41,56 +40,81 @@ const CTASection = () => {
         {/* Main CTA */}
         <div className="text-center mb-20 section-fade-in">
           <h2 className="text-display-md font-display font-black text-deep-black mb-6">
-            Ready to Transform Your <span className="text-gradient">Future</span>?
+            Ready to Transform Your <span className="text-gradient">Property Management</span>?
           </h2>
           <p className="text-xl text-silver mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of satisfied customers who've made the switch. 
-            Setup takes less than 5 minutes. No credit card required.
+            Join thousands of property managers who save time and money with FreeRoom
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button className="bg-system-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift animate-glow">
-              Start Free Trial
+              Get Started Free
             </button>
             <button className="border-2 border-deep-black text-deep-black hover:bg-deep-black hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift">
               Schedule Demo
             </button>
           </div>
+
+          {/* Platform Badges */}
+          <div className="flex justify-center gap-6 mb-8">
+            {platforms.map((platform, index) => (
+              <div key={index} className="flex items-center gap-2 bg-gradient-to-r from-platinum to-white rounded-full px-6 py-3">
+                <span className="text-2xl">{platform.icon}</span>
+                <span className="font-semibold text-charcoal">{platform.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Steps */}
+        {/* Benefits */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {steps.map((step, index) => (
+          {benefits.map((benefit, index) => (
             <div 
               key={index}
               className="text-center section-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-system-blue to-electric-blue rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                {step.number}
-              </div>
               <h3 className="text-xl font-display font-bold text-deep-black mb-2">
-                {step.title}
+                {benefit.title}
               </h3>
               <p className="text-silver">
-                {step.description}
+                {benefit.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Trust Indicators */}
+        {/* Why Choose FreeRoom */}
         <div className="section-fade-in" style={{ animationDelay: '0.3s' }}>
           <div className="bg-gradient-to-r from-platinum to-white rounded-3xl p-8">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {trustIndicators.map((indicator, index) => (
-                <div key={index} className="flex items-center text-sm text-charcoal">
-                  <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {indicator}
-                </div>
-              ))}
+            <h3 className="text-2xl font-display font-bold text-center text-deep-black mb-6">
+              Why Choose FreeRoom
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">Single Platform</div>
+                <div className="text-charcoal text-sm">Eliminate app juggling with our all-in-one solution</div>
+              </div>
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">24/7 Availability</div>
+                <div className="text-charcoal text-sm">System works around the clock for your business</div>
+              </div>
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">User-Friendly</div>
+                <div className="text-charcoal text-sm">Intuitive design with on-demand training</div>
+              </div>
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">Cost Effective</div>
+                <div className="text-charcoal text-sm">Lower operational costs and eliminate multiple subscriptions</div>
+              </div>
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">Reliable</div>
+                <div className="text-charcoal text-sm">99.97% uptime with bank-level security</div>
+              </div>
+              <div className="text-center">
+                <div className="text-system-blue font-bold text-lg mb-2">Customizable</div>
+                <div className="text-charcoal text-sm">Features developed based on user feedback</div>
+              </div>
             </div>
           </div>
         </div>

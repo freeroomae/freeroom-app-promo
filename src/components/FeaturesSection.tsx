@@ -24,22 +24,40 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      title: "Intelligent Automation",
-      description: "Advanced AI learns your patterns and optimizes workflows automatically. Focus on what matters while technology handles the rest.",
-      icon: "🧠",
+      title: "Automated Finance Management",
+      description: "Streamline rent collection with automated invoicing, payment reminders, and seamless online payments. Reduce dues by 90% and maintain steady cash flow.",
+      icon: "💰",
       delay: "0s"
     },
     {
-      title: "Real-Time Collaboration", 
-      description: "Seamless teamwork across any device, anywhere. Share insights, make decisions, and drive results together.",
-      icon: "🤝",
+      title: "Digital Tenant Experience", 
+      description: "Say goodbye to paperwork with digital onboarding, e-signatures via ZohoSign, and automated lease renewals. Keep tenants happy with community features.",
+      icon: "📱",
       delay: "0.2s"
     },
     {
-      title: "Enterprise Security",
-      description: "Bank-level encryption and compliance standards. Your data stays protected, always.",
-      icon: "🔒",
+      title: "Smart Facility Management",
+      description: "Handle maintenance requests efficiently with automated ticket assignment, escalation workflows, and real-time analytics for better decision making.",
+      icon: "🔧",
       delay: "0.4s"
+    },
+    {
+      title: "Powerful Analytics & Reporting",
+      description: "Get instant business insights with comprehensive dashboards, financial reports, and performance analytics to drive growth and profitability.",
+      icon: "📊",
+      delay: "0.6s"
+    },
+    {
+      title: "Multi-Property Management",
+      description: "Manage multiple properties from one unified dashboard. Track occupancy, finances, and operations across your entire portfolio.",
+      icon: "🏢",
+      delay: "0.8s"
+    },
+    {
+      title: "Seamless Integrations",
+      description: "Connect with leading accounting platforms like Zoho, Odoo, and Tally. Integrate with payment gateways and banking systems effortlessly.",
+      icon: "🔗",
+      delay: "1.0s"
     }
   ];
 
@@ -49,15 +67,15 @@ const FeaturesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-20 section-fade-in">
           <h2 className="text-display-md font-display font-black text-deep-black mb-6">
-            Power Meets <span className="text-gradient">Simplicity</span>
+            Why Property Managers Choose <span className="text-gradient">FreeRoom</span>
           </h2>
           <p className="text-xl text-silver max-w-3xl mx-auto leading-relaxed">
-            Every feature engineered for excellence. Every interaction designed for you.
+            Everything you need to manage properties efficiently, all in one place
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
@@ -71,10 +89,10 @@ const FeaturesSection = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-display font-bold text-deep-black mb-4">
+                <h3 className="text-xl font-display font-bold text-deep-black mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-silver leading-relaxed">
+                <p className="text-silver leading-relaxed text-sm">
                   {feature.description}
                 </p>
 
@@ -89,11 +107,24 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-20 section-fade-in" style={{ animationDelay: '0.6s' }}>
-          <button className="bg-deep-black hover:bg-charcoal text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover-lift">
-            Explore All Features
-          </button>
+        {/* Statistics Section */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 section-fade-in" style={{ animationDelay: '1.2s' }}>
+          <div className="text-center">
+            <div className="text-4xl font-display font-black text-system-blue mb-2">99.97%</div>
+            <div className="text-silver font-medium">Uptime Rate</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-display font-black text-system-blue mb-2">90%</div>
+            <div className="text-silver font-medium">Reduction in Dues</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-display font-black text-system-blue mb-2">1000+</div>
+            <div className="text-silver font-medium">Properties Managed</div>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-display font-black text-system-blue mb-2">24/7</div>
+            <div className="text-silver font-medium">Support Available</div>
+          </div>
         </div>
       </div>
     </section>
