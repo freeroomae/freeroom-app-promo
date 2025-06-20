@@ -1,40 +1,40 @@
 import { useEffect, useRef } from 'react';
+import { RotateCcw, Calendar, Bell, MessageSquare, BarChart } from 'lucide-react';
+
 const RenewalsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
     const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach(el => observer.observe(el));
+    elements?.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
-  return <section ref={sectionRef} className="py-32 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+
+  return (
+    <section ref={sectionRef} className="py-32 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
       {/* 3D Background Elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-red-500/10 rounded-3xl animate-float transform rotate-12" style={{
-        animationDelay: '0s'
-      }}></div>
-        <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-br from-red-500/8 to-orange-400/8 rounded-2xl animate-float transform -rotate-12" style={{
-        animationDelay: '2s'
-      }}></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-orange-400/6 to-red-500/6 rounded-full animate-float transform rotate-45" style={{
-        animationDelay: '4s'
-      }}></div>
+        <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-red-500/10 rounded-3xl animate-float transform rotate-12" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-br from-red-500/8 to-orange-400/8 rounded-2xl animate-float transform -rotate-12" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-orange-400/6 to-red-500/6 rounded-full animate-float transform rotate-45" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Renewals Dashboard Mockup */}
-          <div className="relative animate-on-scroll" style={{
-          animationDelay: '0.4s'
-        }}>
+          <div className="relative animate-on-scroll" style={{ animationDelay: '0.4s' }}>
             <div className="relative transform-gpu perspective-1000">
               {/* Main Renewals Card */}
               <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4">
@@ -126,7 +126,9 @@ const RenewalsSection = () => {
           {/* Content */}
           <div className="animate-on-scroll">
             <div className="inline-flex items-center bg-orange-500/10 rounded-full px-6 py-3 mb-6">
-              <span className="text-3xl mr-3">🔄</span>
+              <div className="premium-icon-yellow w-8 h-8 rounded-lg flex items-center justify-center mr-3">
+                <RotateCcw className="w-5 h-5 text-white" />
+              </div>
               <span className="text-orange-600 font-semibold">Renewals & Escalations</span>
             </div>
 
@@ -139,22 +141,30 @@ const RenewalsSection = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              {["Automated lease renewal alerts", "Rent escalation notifications", "Timeline tracking & countdown", "Tenant feedback collection", "Compliance monitoring"].map((feature, index) => <div key={index} className="flex items-center animate-on-scroll" style={{
-              animationDelay: `${0.2 + index * 0.1}s`
-            }}>
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-4"></div>
-                  <span className="text-charcoal font-medium">{feature}</span>
-                </div>)}
+              {[
+                { text: "Automated lease renewal alerts", icon: Bell },
+                { text: "Rent escalation notifications", icon: BarChart },
+                { text: "Timeline tracking & countdown", icon: Calendar },
+                { text: "Tenant feedback collection", icon: MessageSquare },
+                { text: "Compliance monitoring", icon: BarChart }
+              ].map((feature, index) => (
+                <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+                  <div className="premium-icon-yellow w-8 h-8 rounded-lg flex items-center justify-center mr-4">
+                    <feature.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-charcoal font-medium">{feature.text}</span>
+                </div>
+              ))}
             </div>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{
-            animationDelay: '0.8s'
-          }}>
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{ animationDelay: '0.8s' }}>
               Explore Renewal Features
             </button>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default RenewalsSection;

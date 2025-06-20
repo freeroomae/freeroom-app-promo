@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { UserCheck, FileText, Shield, CheckCircle, Clock } from 'lucide-react';
 
 const OnboardingSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,9 @@ const OnboardingSection = () => {
           {/* Content */}
           <div className="animate-on-scroll">
             <div className="inline-flex items-center bg-system-blue/10 rounded-full px-6 py-3 mb-6">
-              <span className="text-3xl mr-3">📋</span>
+              <div className="premium-icon w-8 h-8 rounded-lg flex items-center justify-center mr-3">
+                <UserCheck className="w-5 h-5 text-white" />
+              </div>
               <span className="text-system-blue font-semibold">Custom Onboarding</span>
             </div>
 
@@ -50,20 +53,22 @@ const OnboardingSection = () => {
 
             <div className="space-y-4 mb-8">
               {[
-                "Digital document collection",
-                "Custom data field configuration",
-                "Secure Emirates ID verification",
-                "Automated form validation",
-                "Real-time progress tracking"
+                { text: "Digital document collection", icon: FileText },
+                { text: "Custom data field configuration", icon: CheckCircle },
+                { text: "Secure Emirates ID verification", icon: Shield },
+                { text: "Automated form validation", icon: CheckCircle },
+                { text: "Real-time progress tracking", icon: Clock }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
-                  <div className="w-2 h-2 bg-system-blue rounded-full mr-4"></div>
-                  <span className="text-charcoal font-medium">{feature}</span>
+                  <div className="premium-icon w-8 h-8 rounded-lg flex items-center justify-center mr-4">
+                    <feature.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <span className="text-charcoal font-medium">{feature.text}</span>
                 </div>
               ))}
             </div>
 
-            <button className="bg-system-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{ animationDelay: '0.8s' }}>
+            <button className="premium-button text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 animate-on-scroll" style={{ animationDelay: '0.8s' }}>
               Explore Onboarding Features
             </button>
           </div>
