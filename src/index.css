@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -196,5 +195,86 @@
   /* Parallax Background Elements */
   .parallax-bg {
     transform: translateZ(-1px) scale(2);
+  }
+
+  /* Premium Icon Styles */
+  .premium-icon {
+    background: linear-gradient(135deg, #007AFF 0%, #0056CC 100%);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-icon:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4);
+  }
+
+  .premium-icon-green {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+  }
+
+  .premium-icon-green:hover {
+    box-shadow: 0 8px 24px rgba(52, 211, 153, 0.4);
+  }
+
+  .premium-icon-yellow {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+  }
+
+  .premium-icon-yellow:hover {
+    box-shadow: 0 8px 24px rgba(251, 191, 36, 0.4);
+  }
+
+  .premium-icon-purple {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  }
+
+  .premium-icon-purple:hover {
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+  }
+
+  .premium-icon-red {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  }
+
+  .premium-icon-red:hover {
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+  }
+
+  /* Premium Card Styles */
+  .premium-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .premium-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 122, 255, 0.3);
+  }
+
+  /* Premium Badge Styles */
+  .premium-badge {
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(0, 86, 204, 0.1) 100%);
+    border: 1px solid rgba(0, 122, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Premium Button Styles */
+  .premium-button {
+    background: linear-gradient(135deg, #007AFF 0%, #0056CC 100%);
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 122, 255, 0.4);
+    background: linear-gradient(135deg, #0056CC 0%, #003F7F 100%);
   }
 }
