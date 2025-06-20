@@ -68,39 +68,95 @@ const FinanceManagementSection = () => {
             </button>
           </div>
 
-          {/* 3D Visual Element */}
+          {/* FreeRoom Dashboard Mockup */}
           <div className="relative animate-on-scroll" style={{ animationDelay: '0.4s' }}>
             <div className="relative transform-gpu perspective-1000">
-              {/* Main 3D Card */}
-              <div className="bg-gradient-to-br from-white to-platinum rounded-3xl p-8 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-system-blue/20 to-electric-blue/20 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4 animate-float">
-                    💰
+              {/* Main Dashboard Card */}
+              <div className="bg-gradient-to-br from-white to-platinum rounded-3xl p-6 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-system-blue rounded-lg flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">FR</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-deep-black">FreeRoom</h3>
+                      <p className="text-xs text-silver">Find Your Space, Live Your Dream</p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-deep-black mb-2">Finance Dashboard</h3>
-                  <p className="text-silver">Real-time insights</p>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-600 text-xs">💬</span>
+                    </div>
+                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                      <span className="text-gray-600 text-xs font-bold">M</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Mock Dashboard Elements */}
-                <div className="space-y-4">
-                  <div className="bg-system-blue/10 rounded-xl p-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-charcoal">Monthly Collections</span>
-                      <span className="text-system-blue font-bold">+90%</span>
+                {/* Stats Cards */}
+                <div className="grid grid-cols-4 gap-3 mb-6">
+                  <div className="bg-white rounded-xl p-3 text-center shadow-sm">
+                    <div className="text-xs text-silver mb-1">Properties</div>
+                    <div className="text-xl font-bold text-deep-black">4</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 text-center shadow-sm">
+                    <div className="text-xs text-silver mb-1">Units</div>
+                    <div className="text-xl font-bold text-deep-black">734</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 text-center shadow-sm">
+                    <div className="text-xs text-silver mb-1">Tenants</div>
+                    <div className="text-xl font-bold text-deep-black">572</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-3 text-center shadow-sm">
+                    <div className="text-xs text-silver mb-1">Staff</div>
+                    <div className="text-xl font-bold text-deep-black">36</div>
+                  </div>
+                </div>
+
+                {/* Collection Section */}
+                <div className="bg-white rounded-xl p-4 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-2">
+                        <span className="text-green-600 text-sm">💰</span>
+                      </div>
+                      <h4 className="font-semibold text-deep-black">Collection</h4>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-system-blue h-2 rounded-full w-3/4 animate-pulse"></div>
+                    <select className="text-sm border border-gray-200 rounded-lg px-2 py-1">
+                      <option>December</option>
+                    </select>
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="mb-4">
+                    <div className="flex h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="bg-green-500 flex-1 animate-pulse" style={{ width: '85%' }}></div>
+                      <div className="bg-red-400" style={{ width: '15%' }}></div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-lg font-bold text-system-blue">$127K</div>
-                      <div className="text-xs text-silver">Collected</div>
+                  {/* Collection Details */}
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-red-400 rounded-full mr-2"></div>
+                        <span className="text-sm text-charcoal">Pending</span>
+                      </div>
+                      <span className="text-sm font-semibold text-red-500">AED 2,10,000</span>
                     </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="text-lg font-bold text-electric-blue">$13K</div>
-                      <div className="text-xs text-silver">Pending</div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                        <span className="text-sm text-charcoal">Received</span>
+                      </div>
+                      <span className="text-sm font-semibold text-green-600">AED 15,09,300</span>
+                    </div>
+                    <div className="border-t pt-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-medium text-charcoal">Total collection</span>
+                        <span className="text-lg font-bold text-deep-black">AED 17,19,300</span>
+                      </div>
                     </div>
                   </div>
                 </div>
