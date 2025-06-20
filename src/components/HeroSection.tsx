@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Building2, Users, TrendingUp, Shield, Zap, Globe } from 'lucide-react';
 
@@ -87,3 +86,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
