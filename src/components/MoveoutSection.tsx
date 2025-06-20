@@ -1,34 +1,32 @@
-
 import { useEffect, useRef } from 'react';
-
 const MoveoutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
+    elements?.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <section ref={sectionRef} className="py-32 premium-gradient relative overflow-hidden">
+  return <section ref={sectionRef} className="py-32 premium-gradient relative overflow-hidden">
       {/* 3D Background Elements */}
       <div className="absolute inset-0 opacity-15">
-        <div className="absolute top-20 right-16 w-40 h-40 bg-gradient-to-br from-white/10 to-green-500/10 rounded-3xl animate-float transform -rotate-12" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute bottom-20 left-24 w-32 h-32 bg-gradient-to-br from-green-500/10 to-white/10 rounded-2xl animate-float transform rotate-12" style={{ animationDelay: '5s' }}></div>
-        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-gradient-to-br from-white/8 to-green-500/8 rounded-full animate-float transform rotate-45" style={{ animationDelay: '7s' }}></div>
+        <div className="absolute top-20 right-16 w-40 h-40 bg-gradient-to-br from-white/10 to-green-500/10 rounded-3xl animate-float transform -rotate-12" style={{
+        animationDelay: '3s'
+      }}></div>
+        <div className="absolute bottom-20 left-24 w-32 h-32 bg-gradient-to-br from-green-500/10 to-white/10 rounded-2xl animate-float transform rotate-12" style={{
+        animationDelay: '5s'
+      }}></div>
+        <div className="absolute top-1/3 right-1/3 w-24 h-24 bg-gradient-to-br from-white/8 to-green-500/8 rounded-full animate-float transform rotate-45" style={{
+        animationDelay: '7s'
+      }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -49,27 +47,25 @@ const MoveoutSection = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                "Automated move-out scheduling",
-                "Digital inspection checklists",
-                "Transparent deposit calculations",
-                "Secure refund processing",
-                "Document & photo evidence"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+              {["Automated move-out scheduling", "Digital inspection checklists", "Transparent deposit calculations", "Secure refund processing", "Document & photo evidence"].map((feature, index) => <div key={index} className="flex items-center animate-on-scroll" style={{
+              animationDelay: `${0.2 + index * 0.1}s`
+            }}>
                   <div className="w-2 h-2 bg-white rounded-full mr-4"></div>
                   <span className="text-white/90 font-medium">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
-            <button className="bg-white hover:bg-white/90 text-charcoal px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{ animationDelay: '0.8s' }}>
+            <button className="bg-white hover:bg-white/90 text-charcoal px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{
+            animationDelay: '0.8s'
+          }}>
               Explore Move-out Features
             </button>
           </div>
 
           {/* Move-out Interface Mockup */}
-          <div className="relative animate-on-scroll order-2 lg:order-2" style={{ animationDelay: '0.4s' }}>
+          <div className="relative animate-on-scroll order-2 lg:order-2" style={{
+          animationDelay: '0.4s'
+        }}>
             <div className="relative transform-gpu perspective-1000">
               {/* Payment Details Card */}
               <div className="bg-gradient-to-br from-white to-platinum rounded-3xl p-6 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4 mb-4">
@@ -78,7 +74,7 @@ const MoveoutSection = () => {
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
                   <div>
                     <h3 className="text-lg font-bold text-deep-black">Md Salim</h3>
-                    <p className="text-sm text-gray-500">123 • YourBrand</p>
+                    <p className="text-sm text-gray-500">123 • FreeRoom</p>
                   </div>
                 </div>
 
@@ -116,7 +112,7 @@ const MoveoutSection = () => {
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
                   <div>
                     <h3 className="text-lg font-bold text-deep-black">Sahil Khan</h3>
-                    <p className="text-sm text-gray-500">1 • YourBrand</p>
+                    <p className="text-sm text-gray-500">1 • FreeRoom</p>
                   </div>
                 </div>
 
@@ -126,7 +122,7 @@ const MoveoutSection = () => {
                 <div className="flex items-center mb-4">
                   <div className="relative w-16 h-16 mr-4">
                     <svg className="w-16 h-16 transform -rotate-90">
-                      <circle cx="32" cy="32" r="28" stroke="#fbbf24" strokeWidth="6" fill="none" strokeDasharray="176" strokeDashoffset="52"/>
+                      <circle cx="32" cy="32" r="28" stroke="#fbbf24" strokeWidth="6" fill="none" strokeDasharray="176" strokeDashoffset="52" />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
@@ -186,14 +182,16 @@ const MoveoutSection = () => {
               </div>
 
               {/* Floating 3D Elements */}
-              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-white/30 to-green-500/30 rounded-xl animate-float transform rotateZ-6" style={{ animationDelay: '4s' }}></div>
-              <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-gradient-to-br from-green-500/25 to-white/25 rounded-lg animate-float transform -rotateZ-6" style={{ animationDelay: '6s' }}></div>
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-white/30 to-green-500/30 rounded-xl animate-float transform rotateZ-6" style={{
+              animationDelay: '4s'
+            }}></div>
+              <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-gradient-to-br from-green-500/25 to-white/25 rounded-lg animate-float transform -rotateZ-6" style={{
+              animationDelay: '6s'
+            }}></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default MoveoutSection;

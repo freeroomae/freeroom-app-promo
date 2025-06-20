@@ -1,40 +1,40 @@
-
 import { useEffect, useRef } from 'react';
-
 const RenewalsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     const elements = sectionRef.current?.querySelectorAll('.animate-on-scroll');
-    elements?.forEach((el) => observer.observe(el));
-
+    elements?.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <section ref={sectionRef} className="py-32 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+  return <section ref={sectionRef} className="py-32 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
       {/* 3D Background Elements */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-red-500/10 rounded-3xl animate-float transform rotate-12" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-br from-red-500/8 to-orange-400/8 rounded-2xl animate-float transform -rotate-12" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-orange-400/6 to-red-500/6 rounded-full animate-float transform rotate-45" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-16 right-16 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-red-500/10 rounded-3xl animate-float transform rotate-12" style={{
+        animationDelay: '0s'
+      }}></div>
+        <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-br from-red-500/8 to-orange-400/8 rounded-2xl animate-float transform -rotate-12" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-orange-400/6 to-red-500/6 rounded-full animate-float transform rotate-45" style={{
+        animationDelay: '4s'
+      }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Renewals Dashboard Mockup */}
-          <div className="relative animate-on-scroll" style={{ animationDelay: '0.4s' }}>
+          <div className="relative animate-on-scroll" style={{
+          animationDelay: '0.4s'
+        }}>
             <div className="relative transform-gpu perspective-1000">
               {/* Main Renewals Card */}
               <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4">
@@ -43,7 +43,7 @@ const RenewalsSection = () => {
                   <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
                   <div>
                     <h3 className="text-lg font-bold text-deep-black">Md. Salim</h3>
-                    <p className="text-sm text-gray-500">123 • YourBrand</p>
+                    <p className="text-sm text-gray-500">123 • Free Room</p>
                   </div>
                 </div>
 
@@ -57,7 +57,7 @@ const RenewalsSection = () => {
                 <div className="text-center mb-6">
                   <div className="relative w-24 h-24 mx-auto">
                     <svg className="w-24 h-24 transform -rotate-90">
-                      <circle cx="48" cy="48" r="40" stroke="#fbbf24" strokeWidth="8" fill="none" strokeDasharray="251" strokeDashoffset="75"/>
+                      <circle cx="48" cy="48" r="40" stroke="#fbbf24" strokeWidth="8" fill="none" strokeDasharray="251" strokeDashoffset="75" />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
@@ -95,15 +95,15 @@ const RenewalsSection = () => {
               </div>
 
               {/* Feedback Card */}
-              <div className="absolute -right-8 -bottom-8 bg-white rounded-2xl p-6 shadow-xl border border-gray-200 animate-float" style={{ animationDelay: '2s' }}>
+              <div className="absolute -right-8 -bottom-8 bg-white rounded-2xl p-6 shadow-xl border border-gray-200 animate-float" style={{
+              animationDelay: '2s'
+            }}>
                 <div className="text-center mb-4">
                   <div className="text-lg font-bold text-deep-black mb-2">Please rate your experience</div>
                   <div className="flex justify-center space-x-2">
-                    {['😊', '😐', '😢'].map((emoji, index) => (
-                      <div key={index} className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-2xl cursor-pointer hover:bg-yellow-200 transition-colors">
+                    {['😊', '😐', '😢'].map((emoji, index) => <div key={index} className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-2xl cursor-pointer hover:bg-yellow-200 transition-colors">
                         {emoji}
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                   <div className="flex justify-center space-x-4 text-xs text-gray-500 mt-2">
                     <span>Happy</span>
@@ -117,7 +117,9 @@ const RenewalsSection = () => {
               </div>
 
               {/* Floating 3D Elements */}
-              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-red-500/30 rounded-xl animate-float transform rotateZ-6" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-orange-400/30 to-red-500/30 rounded-xl animate-float transform rotateZ-6" style={{
+              animationDelay: '1s'
+            }}></div>
             </div>
           </div>
 
@@ -137,28 +139,22 @@ const RenewalsSection = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                "Automated lease renewal alerts",
-                "Rent escalation notifications",
-                "Timeline tracking & countdown",
-                "Tenant feedback collection",
-                "Compliance monitoring"
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+              {["Automated lease renewal alerts", "Rent escalation notifications", "Timeline tracking & countdown", "Tenant feedback collection", "Compliance monitoring"].map((feature, index) => <div key={index} className="flex items-center animate-on-scroll" style={{
+              animationDelay: `${0.2 + index * 0.1}s`
+            }}>
                   <div className="w-2 h-2 bg-orange-500 rounded-full mr-4"></div>
                   <span className="text-charcoal font-medium">{feature}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{ animationDelay: '0.8s' }}>
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover-lift animate-on-scroll" style={{
+            animationDelay: '0.8s'
+          }}>
               Explore Renewal Features
             </button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default RenewalsSection;
