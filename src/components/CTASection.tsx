@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Smartphone, Monitor } from 'lucide-react';
+import { Smartphone, Laptop } from 'lucide-react';
 
 const CTASection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ const CTASection = () => {
   const platforms = [
     { name: "iOS", icon: <Smartphone className="w-5 h-5" /> },
     { name: "Android", icon: <Smartphone className="w-5 h-5" /> },
-    { name: "Web", icon: <Monitor className="w-5 h-5" /> }
+    { name: "Web", icon: <Laptop className="w-5 h-5" /> }
   ];
 
   return (

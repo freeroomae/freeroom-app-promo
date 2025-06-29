@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Smartphone, Monitor } from 'lucide-react';
+import { Smartphone, Laptop } from 'lucide-react';
 
 const SocialProofSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const SocialProofSection = () => {
   const platformAvailability = [
     { platform: "iOS", icon: <Smartphone className="w-6 h-6" />, description: "iPhone & iPad apps" },
     { platform: "Android", icon: <Smartphone className="w-6 h-6" />, description: "Mobile application" },
-    { platform: "Web", icon: <Monitor className="w-6 h-6" />, description: "Browser-based platform" }
+    { platform: "Web", icon: <Laptop className="w-6 h-6" />, description: "Browser-based platform" }
   ];
 
   return (

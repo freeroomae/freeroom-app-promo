@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { MessageSquare, DollarSign } from 'lucide-react';
+import { MessageCircleMore, Banknote } from 'lucide-react';
 import { CreditCard, PieChart, TrendingUp, Calculator } from 'lucide-react';
 
 const FinanceManagementSection = () => {
@@ -92,7 +92,7 @@ const FinanceManagementSection = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <MessageSquare className="text-green-600 w-4 h-4" />
+                      <MessageCircleMore className="text-green-600 w-4 h-4" />
                     </div>
                     <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
                       <span className="text-gray-600 text-xs font-bold">M</span>
@@ -125,7 +125,7 @@ const FinanceManagementSection = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-2">
-                        <DollarSign className="text-green-600 w-4 h-4" />
+                        <Banknote className="text-green-600 w-4 h-4" />
                       </div>
                       <h4 className="font-semibold text-deep-black">Collection</h4>
                     </div>

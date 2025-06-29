@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { BarChart3 } from 'lucide-react';
+import { BarChart2 } from 'lucide-react';
 
 const SalesManagementSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const SalesManagementSection = () => {
               <div className="bg-gradient-to-br from-white to-platinum rounded-3xl p-8 shadow-2xl border border-gray-100 hover-lift feature-card-3d transform rotateY-2 translateZ-4">
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 bg-gradient-to-br from-system-blue/20 to-electric-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-4 animate-float">
-                    <BarChart3 className="w-10 h-10 text-system-blue" />
+                    <BarChart2 className="w-10 h-10 text-system-blue" />
                   </div>
                   <h3 className="text-2xl font-bold text-deep-black mb-2">Sales Dashboard</h3>
                   <p className="text-silver">Booking insights</p>
@@ -86,7 +86,7 @@ const SalesManagementSection = () => {
           {/* Content */}
           <div className="animate-on-scroll order-1 lg:order-2">
             <div className="inline-flex items-center bg-white/10 rounded-full px-6 py-3 mb-6">
-              <BarChart3 className="w-6 h-6 mr-3 text-white" />
+              <BarChart2 className="w-6 h-6 mr-3 text-white" />
               <span className="text-white font-semibold">Sales Management</span>
             </div>
 

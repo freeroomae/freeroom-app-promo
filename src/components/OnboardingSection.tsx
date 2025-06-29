@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { UserCheck, FileText, Shield, CheckCircle, Clock, Clipboard, Edit3, Check } from 'lucide-react';
+import { UserCheck, FileText, Shield, CheckCircle, Clock, ClipboardList, PencilLine, CheckCircle as CheckCircleIcon } from 'lucide-react';
 
 const OnboardingSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -82,7 +82,7 @@ const OnboardingSection = () => {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-system-blue rounded-lg flex items-center justify-center mr-3">
-                      <Clipboard className="w-5 h-5 text-white" />
+                      <ClipboardList className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-deep-black">Additional Information</h3>
                   </div>
@@ -104,9 +104,9 @@ const OnboardingSection = () => {
                     <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                       <span className="text-charcoal font-medium">{item.field}</span>
                       <div className="flex items-center">
-                        <Edit3 className="w-4 h-4 text-gray-500 mr-2" />
+                        <PencilLine className="w-4 h-4 text-gray-500 mr-2" />
                         <div className={`w-4 h-4 rounded ${item.checked ? 'bg-system-blue' : 'border border-gray-300'} flex items-center justify-center`}>
-                          {item.checked && <Check className="w-3 h-3 text-white" />}
+                          {item.checked && <CheckCircleIcon className="w-3 h-3 text-white" />}
                         </div>
                       </div>
                     </div>

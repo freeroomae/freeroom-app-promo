@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { RotateCcw, Calendar, Bell, MessageSquare, BarChart } from 'lucide-react';
+import { RotateCcw, Calendar, Bell, MessageCircleMore, BarChart } from 'lucide-react';
 
 const RenewalsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -145,7 +145,7 @@ const RenewalsSection = () => {
                 { text: "Automated lease renewal alerts", icon: Bell },
                 { text: "Rent escalation notifications", icon: BarChart },
                 { text: "Timeline tracking & countdown", icon: Calendar },
-                { text: "Tenant feedback collection", icon: MessageSquare },
+                { text: "Tenant feedback collection", icon: MessageCircleMore },
                 { text: "Compliance monitoring", icon: BarChart }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>

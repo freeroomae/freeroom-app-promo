@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Home, Lock } from 'lucide-react';
+import { Home, ShieldCheck } from 'lucide-react';
 const MoveoutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -95,7 +95,7 @@ const MoveoutSection = () => {
 
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center">
-                      <Lock className="w-4 h-4 text-purple-600 mr-2" />
+                      <ShieldCheck className="w-4 h-4 text-purple-600 mr-2" />
                       <span className="text-sm text-purple-800">Refundable security</span>
                     </div>
                     <div className="text-right">

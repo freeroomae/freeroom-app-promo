@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { DollarSign, Smartphone, Wrench, BarChart3, Building2, Link } from 'lucide-react';
+import { Banknote, Smartphone, Wrench, BarChart2, Building, Link2 } from 'lucide-react';
 
 const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ const FeaturesSection = () => {
     {
       title: "Automated Finance Management",
       description: "Streamline rent collection with automated invoicing, payment reminders, and seamless online payments. Reduce dues by 90% and maintain steady cash flow.",
-      icon: <DollarSign className="w-8 h-8" />,
+      icon: <Banknote className="w-8 h-8" />,
       delay: "0s"
     },
     {
@@ -45,19 +45,19 @@ const FeaturesSection = () => {
     {
       title: "Powerful Analytics & Reporting",
       description: "Get instant business insights with comprehensive dashboards, financial reports, and performance analytics to drive growth and profitability.",
-      icon: <BarChart3 className="w-8 h-8" />,
+      icon: <BarChart2 className="w-8 h-8" />,
       delay: "0.6s"
     },
     {
       title: "Multi-Property Management",
       description: "Manage multiple properties from one unified dashboard. Track occupancy, finances, and operations across your entire portfolio.",
-      icon: <Building2 className="w-8 h-8" />,
+      icon: <Building className="w-8 h-8" />,
       delay: "0.8s"
     },
     {
       title: "Seamless Integrations",
       description: "Connect with leading accounting platforms like Zoho, Odoo, and Tally. Integrate with payment gateways and banking systems effortlessly.",
-      icon: <Link className="w-8 h-8" />,
+      icon: <Link2 className="w-8 h-8" />,
       delay: "1.0s"
     }
   ];

@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Building2, Users, Smartphone, Zap, Lock, BarChart3, Monitor } from 'lucide-react';
+import { Building, Users, Smartphone, Activity, ShieldCheck, BarChart2, Laptop } from 'lucide-react';
 
 const AppDownloadSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -49,7 +49,7 @@ const AppDownloadSection = () => {
           <div className="section-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Building2 className="w-10 h-10 text-white" />
+                <Building className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
                 For Landlords & Property Managers
@@ -161,17 +161,17 @@ const AppDownloadSection = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Zap className="w-8 h-8" />,
+                icon: <Activity className="w-8 h-8" />,
                 title: "Lightning Fast",
                 description: "Quick property searches and instant bookings"
               },
               {
-                icon: <Lock className="w-8 h-8" />,
+                icon: <ShieldCheck className="w-8 h-8" />,
                 title: "Secure & Reliable",
                 description: "Bank-grade security for all your transactions"
               },
               {
-                icon: <BarChart3 className="w-8 h-8" />,
+                icon: <BarChart2 className="w-8 h-8" />,
                 title: "Real-time Analytics",
                 description: "Track your portfolio performance on the go"
               }
