@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Rocket, DollarSign, Users, Wrench, BarChart3 } from 'lucide-react';
 
 const HeroSection = () => {
   const hero3DRef = useRef<HTMLDivElement>(null);
@@ -50,10 +51,10 @@ const HeroSection = () => {
   }, []);
 
   const platformCards = [
-    { title: "Finance Management", description: "Automated billing & collections", icon: "💰" },
-    { title: "Tenant Management", description: "Digital onboarding & renewals", icon: "👥" },
-    { title: "Facility Management", description: "Maintenance & operations", icon: "🔧" },
-    { title: "Sales Management", description: "Bookings & inventory", icon: "📊" }
+    { title: "Finance Management", description: "Automated billing & collections", icon: <DollarSign className="w-8 h-8" /> },
+    { title: "Tenant Management", description: "Digital onboarding & renewals", icon: <Users className="w-8 h-8" /> },
+    { title: "Facility Management", description: "Maintenance & operations", icon: <Wrench className="w-8 h-8" /> },
+    { title: "Sales Management", description: "Bookings & inventory", icon: <BarChart3 className="w-8 h-8" /> }
   ];
 
   const gccCountries = ["Bahrain", "Kuwait", "Oman", "Qatar", "Saudi Arabia", "UAE"];
@@ -79,7 +80,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left space-y-6 lg:space-y-8">
             {/* GCC Launch Banner */}
             <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 animate-on-scroll hover-lift border border-white/20">
-              <span className="text-xl sm:text-2xl mr-2 sm:mr-3">🚀</span>
+              <Rocket className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-white" />
               <span className="text-white font-semibold text-sm sm:text-base">Now Launching in GCC</span>
             </div>
 
@@ -129,7 +130,7 @@ const HeroSection = () => {
                   }}
                 >
                   <div className="text-center">
-                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-system-blue mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
                       {card.icon}
                     </div>
                     <h3 className="text-white font-bold text-base sm:text-lg mb-2 group-hover:text-white transition-colors duration-300">

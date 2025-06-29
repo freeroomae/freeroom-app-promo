@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Building2, Users, Smartphone, Zap, Lock, BarChart3, Monitor } from 'lucide-react';
 
 const AppDownloadSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ const AppDownloadSection = () => {
           <div className="section-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">🏢</span>
+                <Building2 className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
                 For Landlords & Property Managers
@@ -67,7 +68,7 @@ const AppDownloadSection = () => {
                 className="flex items-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover-lift group"
               >
                 <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">📱</span>
+                  <Smartphone className="w-8 h-8 text-system-blue" />
                 </div>
                 <div className="flex-1">
                   <div className="text-white font-bold text-lg">Download for iOS</div>
@@ -86,7 +87,7 @@ const AppDownloadSection = () => {
                 className="flex items-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover-lift group"
               >
                 <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🤖</span>
+                  <Smartphone className="w-8 h-8 text-green-600" />
                 </div>
                 <div className="flex-1">
                   <div className="text-white font-bold text-lg">Download for Android</div>
@@ -103,7 +104,7 @@ const AppDownloadSection = () => {
           <div className="section-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">👥</span>
+                <Users className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-display font-bold text-white mb-4">
                 For Tenants
@@ -122,7 +123,7 @@ const AppDownloadSection = () => {
                 className="flex items-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover-lift group"
               >
                 <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">📱</span>
+                  <Smartphone className="w-8 h-8 text-system-blue" />
                 </div>
                 <div className="flex-1">
                   <div className="text-white font-bold text-lg">Download for iOS</div>
@@ -141,7 +142,7 @@ const AppDownloadSection = () => {
                 className="flex items-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 hover-lift group"
               >
                 <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🤖</span>
+                  <Smartphone className="w-8 h-8 text-green-600" />
                 </div>
                 <div className="flex-1">
                   <div className="text-white font-bold text-lg">Download for Android</div>
@@ -160,23 +161,23 @@ const AppDownloadSection = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "⚡",
+                icon: <Zap className="w-8 h-8" />,
                 title: "Lightning Fast",
                 description: "Quick property searches and instant bookings"
               },
               {
-                icon: "🔒",
+                icon: <Lock className="w-8 h-8" />,
                 title: "Secure & Reliable",
                 description: "Bank-grade security for all your transactions"
               },
               {
-                icon: "📊",
+                icon: <BarChart3 className="w-8 h-8" />,
                 title: "Real-time Analytics",
                 description: "Track your portfolio performance on the go"
               }
             ].map((feature, index) => (
               <div key={index} className="text-center glass-effect rounded-2xl p-6 hover-lift">
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <div className="text-white mb-4 flex justify-center">{feature.icon}</div>
                 <div className="text-white font-bold text-lg mb-2">{feature.title}</div>
                 <div className="text-white/70 text-sm">{feature.description}</div>
               </div>

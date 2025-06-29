@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Smartphone, Monitor } from 'lucide-react';
 
 const CTASection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,9 +30,9 @@ const CTASection = () => {
   ];
 
   const platforms = [
-    { name: "iOS", icon: "📱" },
-    { name: "Android", icon: "🤖" },
-    { name: "Web", icon: "💻" }
+    { name: "iOS", icon: <Smartphone className="w-5 h-5" /> },
+    { name: "Android", icon: <Smartphone className="w-5 h-5" /> },
+    { name: "Web", icon: <Monitor className="w-5 h-5" /> }
   ];
 
   return (
@@ -59,7 +60,7 @@ const CTASection = () => {
           <div className="flex justify-center gap-6 mb-8">
             {platforms.map((platform, index) => (
               <div key={index} className="flex items-center gap-2 bg-gradient-to-r from-platinum to-white rounded-full px-6 py-3">
-                <span className="text-2xl">{platform.icon}</span>
+                <span className="text-system-blue">{platform.icon}</span>
                 <span className="font-semibold text-charcoal">{platform.name}</span>
               </div>
             ))}

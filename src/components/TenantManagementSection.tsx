@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { MessageSquare, FileText } from 'lucide-react';
 
 const TenantManagementSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,7 @@ const TenantManagementSection = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600 text-xs">💬</span>
+                      <MessageSquare className="text-green-600 w-4 h-4" />
                     </div>
                     <div className="w-8 h-8 bg-system-blue rounded-full flex items-center justify-center">
                       <span className="text-white text-xs font-bold">W</span>
@@ -141,7 +142,7 @@ const TenantManagementSection = () => {
                     </div>
                     <div className="text-center">
                       <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <span className="text-blue-600 text-sm">📄</span>
+                        <FileText className="text-blue-600 w-4 h-4" />
                       </div>
                       <div className="text-xs text-silver mb-1">Agreements</div>
                       <div className="text-lg font-bold text-deep-black">18</div>
