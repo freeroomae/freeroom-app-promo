@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Home, ShieldCheck } from 'lucide-react';
 const MoveoutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -34,7 +35,7 @@ const MoveoutSection = () => {
           {/* Content */}
           <div className="animate-on-scroll">
             <div className="inline-flex items-center bg-white/10 rounded-full px-6 py-3 mb-6">
-              <span className="text-3xl mr-3">🏠</span>
+              <Home className="w-6 h-6 mr-3 text-white" />
               <span className="text-white font-semibold">Move-out Management</span>
             </div>
 
@@ -94,7 +95,7 @@ const MoveoutSection = () => {
 
                   <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center">
-                      <span className="text-purple-600 mr-2">🔒</span>
+                      <ShieldCheck className="w-4 h-4 text-purple-600 mr-2" />
                       <span className="text-sm text-purple-800">Refundable security</span>
                     </div>
                     <div className="text-right">

@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Banknote, Smartphone, Wrench, BarChart2, Building, Link2 } from 'lucide-react';
 
 const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -26,37 +27,37 @@ const FeaturesSection = () => {
     {
       title: "Automated Finance Management",
       description: "Streamline rent collection with automated invoicing, payment reminders, and seamless online payments. Reduce dues by 90% and maintain steady cash flow.",
-      icon: "💰",
+      icon: <Banknote className="w-8 h-8" />,
       delay: "0s"
     },
     {
       title: "Digital Tenant Experience", 
       description: "Say goodbye to paperwork with digital onboarding, e-signatures via ZohoSign, and automated lease renewals. Keep tenants happy with community features.",
-      icon: "📱",
+      icon: <Smartphone className="w-8 h-8" />,
       delay: "0.2s"
     },
     {
       title: "Smart Facility Management",
       description: "Handle maintenance requests efficiently with automated ticket assignment, escalation workflows, and real-time analytics for better decision making.",
-      icon: "🔧",
+      icon: <Wrench className="w-8 h-8" />,
       delay: "0.4s"
     },
     {
       title: "Powerful Analytics & Reporting",
       description: "Get instant business insights with comprehensive dashboards, financial reports, and performance analytics to drive growth and profitability.",
-      icon: "📊",
+      icon: <BarChart2 className="w-8 h-8" />,
       delay: "0.6s"
     },
     {
       title: "Multi-Property Management",
       description: "Manage multiple properties from one unified dashboard. Track occupancy, finances, and operations across your entire portfolio.",
-      icon: "🏢",
+      icon: <Building className="w-8 h-8" />,
       delay: "0.8s"
     },
     {
       title: "Seamless Integrations",
       description: "Connect with leading accounting platforms like Zoho, Odoo, and Tally. Integrate with payment gateways and banking systems effortlessly.",
-      icon: "🔗",
+      icon: <Link2 className="w-8 h-8" />,
       delay: "1.0s"
     }
   ];
@@ -90,7 +91,7 @@ const FeaturesSection = () => {
             >
               <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:border-system-blue/20 group-hover:transform group-hover:rotateY-2 group-hover:translateZ-4">
                 {/* 3D Icon Container */}
-                <div className="w-16 h-16 bg-gradient-to-br from-system-blue/10 to-electric-blue/10 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:rotateZ-6 transition-all duration-300 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-system-blue/10 to-electric-blue/10 rounded-2xl flex items-center justify-center text-system-blue mb-6 group-hover:scale-110 group-hover:rotateZ-6 transition-all duration-300 shadow-lg">
                   {feature.icon}
                 </div>
 

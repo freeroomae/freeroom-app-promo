@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { DollarSign, BarChart3, TrendingUp, PiggyBank, Wallet } from 'lucide-react';
+import { Banknote, BarChart2, TrendingUp, PiggyBank, Wallet } from 'lucide-react';
 
 const CollectionSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ const CollectionSection = () => {
           <div className="animate-on-scroll">
             <div className="inline-flex items-center bg-green-500/10 rounded-full px-6 py-3 mb-6">
               <div className="premium-icon-green w-8 h-8 rounded-lg flex items-center justify-center mr-3">
-                <DollarSign className="w-5 h-5 text-white" />
+                <Banknote className="w-5 h-5 text-white" />
               </div>
               <span className="text-green-600 font-semibold">Smart Collections</span>
             </div>
@@ -53,10 +53,10 @@ const CollectionSection = () => {
 
             <div className="space-y-4 mb-8">
               {[
-                { text: "Real-time payment tracking", icon: BarChart3 },
+                { text: "Real-time payment tracking", icon: BarChart2 },
                 { text: "Automated collection reports", icon: TrendingUp },
                 { text: "Smart payment reminders", icon: Wallet },
-                { text: "Visual collection analytics", icon: BarChart3 },
+                { text: "Visual collection analytics", icon: BarChart2 },
                 { text: "Monthly collection insights", icon: PiggyBank }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center animate-on-scroll" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
@@ -82,7 +82,7 @@ const CollectionSection = () => {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center">
                     <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white text-sm">💰</span>
+                      <Banknote className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-deep-black">Collection</h3>
                   </div>

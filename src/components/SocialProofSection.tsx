@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { Smartphone, Laptop } from 'lucide-react';
 
 const SocialProofSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,9 +39,9 @@ const SocialProofSection = () => {
   ];
 
   const platformAvailability = [
-    { platform: "iOS", icon: "📱", description: "iPhone & iPad apps" },
-    { platform: "Android", icon: "🤖", description: "Mobile application" },
-    { platform: "Web", icon: "💻", description: "Browser-based platform" }
+    { platform: "iOS", icon: <Smartphone className="w-6 h-6" />, description: "iPhone & iPad apps" },
+    { platform: "Android", icon: <Smartphone className="w-6 h-6" />, description: "Mobile application" },
+    { platform: "Web", icon: <Laptop className="w-6 h-6" />, description: "Browser-based platform" }
   ];
 
   return (
@@ -92,7 +93,7 @@ const SocialProofSection = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {platformAvailability.map((platform, index) => (
               <div key={index} className="text-center glass-effect rounded-2xl p-6 hover-lift">
-                <div className="text-4xl mb-3">{platform.icon}</div>
+                <div className="text-white mb-3 flex justify-center">{platform.icon}</div>
                 <div className="text-white font-bold text-lg mb-2">{platform.platform}</div>
                 <div className="text-white/70 text-sm">{platform.description}</div>
               </div>
